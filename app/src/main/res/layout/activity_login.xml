@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
 
     <LinearLayout
@@ -16,7 +16,6 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="64dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -24,7 +23,7 @@
             app:srcCompat="@drawable/ic_baseline_person_pin_24" />
 
         <EditText
-            android:id="@+id/et_username"
+            android:id="@+id/user_phone"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -37,7 +36,7 @@
             android:padding="5dp" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/user_password"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -71,7 +70,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:layout_weight="1"
-
                 android:background="@drawable/btn_style"
                 android:text="@string/btn_login"
                 android:textColor="#5F6468"

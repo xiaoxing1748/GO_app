@@ -1,7 +1,7 @@
 <resources>
     <!--  app  -->
     <string name="app_name">GO</string>
-    <string name="app_version">0.0.1</string>
+    <string name="app_version">阿星的GO version_0.0.1</string>
     <!--  input  -->
     <string name="input_phone">请输入手机号</string>
     <string name="input_password">请输入密码</string>
