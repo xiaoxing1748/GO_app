@@ -1,0 +1,22 @@
+<resources>
+    <!--  app  -->
+    <string name="app_name">GO</string>
+    <string name="app_version">0.0.1</string>
+    <!--  input  -->
+    <string name="input_phone">请输入手机号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_password_confirm">确认密码</string>
+    <string name="input_car_name">请输入汽车名称</string>
+    <!--  button  -->
+    <string name="btn_login">登录</string>
+    <string name="btn_register">注册</string>
+    <string name="btn_search">搜索</string>
+    <!--  text  -->
+    <string name="text_price">售价：</string>
+    <string name="text_brand">品牌：</string>
+    <string name="text_date">上市日期：</string>
+    <!--  menu  -->
+    <string name="menu_search">搜索</string>
+    <string name="menu_car_list">汽车列表</string>
+    <string name="menu_rate">评分</string>
+</resources>
