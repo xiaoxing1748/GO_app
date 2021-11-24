@@ -7,7 +7,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_second"
+        android:id="@+id/tv_second"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

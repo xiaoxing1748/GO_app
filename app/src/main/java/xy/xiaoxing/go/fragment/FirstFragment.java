@@ -44,7 +44,7 @@ public class FirstFragment extends Fragment {
 
     private void initView(View view) {
         editTextCarName = view.findViewById(R.id.editTextCarName);
-        button = view.findViewById(R.id.search_button);
+        button = view.findViewById(R.id.buttonSearch);
 
         searchRv = view.findViewById(R.id.search_rv);
         mlist = new ArrayList<>();

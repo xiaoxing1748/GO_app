@@ -38,7 +38,7 @@ public class SecondFragment extends Fragment {
     }
 
     private void initView(View view) {
-        tvSecond = (RecyclerView) view.findViewById(R.id.fragment_second);
+        tvSecond = (RecyclerView) view.findViewById(R.id.tv_second);
         mlist = new ArrayList<>();
         adapter=new CarAdapter(this.getContext(),mlist);
         tvSecond.setAdapter(adapter);
