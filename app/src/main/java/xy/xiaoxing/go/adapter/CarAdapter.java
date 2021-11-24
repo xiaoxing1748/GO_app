@@ -106,7 +106,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
         holder.car_brand.setText("品牌：" + car.getCar_brand());
         holder.car_price.setText("售价：" + car.getCar_price());
         holder.car_date.setText("上市日期： " + car.getCar_date());
-        holder.car_info.setText(car.getCar_id()+"车辆介绍： " + car.getCar_info());
+        holder.car_info.setText("车辆介绍： " + car.getCar_info());
 
     }
 
