@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText userPassword;
     private Button btnLogin;
     private Button btnRegister;
-    private String phone_string;
-    private String password_string;
     SharedPreferences pref;
 
     @Override
@@ -52,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnLogin.setOnClickListener(this);
         userPhone.setText(pref.getString("user_phone", ""));
         userPassword.setText(pref.getString("user_password", ""));
-        phone_string=userPhone.getText().toString();
-        password_string=userPassword.getText().toString();
     }
 
     /**
