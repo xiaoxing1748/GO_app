@@ -3,14 +3,14 @@ package xy.xiaoxing.go.core;
 import android.util.Log;
 
 public class Car {
-    private String car_id;
+    private int car_id;
     private String car_name;
     private String car_brand;
     private String car_date;
     private String car_info;
     private String car_price;
 
-    public Car(String car_id, String car_name, String car_brand, String car_date, String car_info, String car_price) {
+    public Car(int car_id, String car_name, String car_brand, String car_date, String car_info, String car_price) {
         this.car_id = car_id;
         this.car_name = car_name;
         this.car_brand = car_brand;
@@ -20,11 +20,11 @@ public class Car {
         Log.i("Car类",car_id+car_name+car_brand+car_date+car_info+car_price);
     }
 
-    public String getCar_id() {
+    public int getCar_id() {
         return car_id;
     }
 
-    public void setCar_id(String car_id) {
+    public void setCar_id(int car_id) {
         this.car_id = car_id;
     }
 

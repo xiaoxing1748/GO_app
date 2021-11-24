@@ -71,14 +71,15 @@ public class FirstFragment extends Fragment {
         MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(getContext());
         SQLiteDatabase db = mySQLiteHelper.getReadableDatabase();
         //模糊查询
-        @SuppressLint("Recycle") Cursor cursor =
-                db.rawQuery("select * from car where car_name or car_brand or car_info like '%"+keyword+"%';", null);
-
+        String query="select * from car where car_name like '%"+keyword+"%' or car_brand like '%"+keyword+"%' or car_info like '%"+keyword+"%';";
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query, null);
+        Log.i("query",query);
         if (cursor != null) {
             //先清除mlist再添加
             mlist.clear();
             while(cursor.moveToNext()){
-                String id = cursor.getString(0);
+//                String id = cursor.getString(0);
+                int id=cursor.getInt(0);
                 String name = cursor.getString(1);
                 String brand = cursor.getString(2);
                 String date = cursor.getString(3);
@@ -92,8 +93,6 @@ public class FirstFragment extends Fragment {
             Toast.makeText(getContext(), "测试", Toast.LENGTH_LONG).show();
 
         }
-
-        Log.i("initData方法", "nope" + mlist.size());
         cursor.close();
         db.close();
         adapter.notifyDataSetChanged();
