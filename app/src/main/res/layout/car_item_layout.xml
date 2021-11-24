@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <ImageView
-            android:id="@+id/img_car"
+            android:id="@+id/car_img"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_weight="1"
@@ -69,7 +69,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:numStars="5"
-            android:rating="3.5"
+            android:rating="4"
             android:stepSize="0.5"/>
     </LinearLayout>
 
