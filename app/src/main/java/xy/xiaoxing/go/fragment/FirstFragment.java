@@ -54,7 +54,7 @@ public class FirstFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("TAG", "onClick: beidianjile");
+                Log.i("FirstFragment.initView", "onClick: 点击了搜索汽车");
                 if (!TextUtils.isEmpty(editTextCarName.getText().toString().trim())) {
                     String car_name = editTextCarName.getText().toString();
                     initData(car_name);
@@ -71,23 +71,25 @@ public class FirstFragment extends Fragment {
         MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(getContext());
         SQLiteDatabase db = mySQLiteHelper.getReadableDatabase();
         @SuppressLint("Recycle") Cursor cursor =
-                db.rawQuery("select * from car", null);
+                db.rawQuery("select * from car where car_name like '"+car_name+"';", null);
 
         if (cursor != null) {
-            String id = "1";
-            String name = "null";
-            String brand="BMW";
-            String info="null";
-            String price = "6880000";
-            String date = "2011/05";
-            Car car = new Car(id,name,brand,date,info,price);
-            mlist.add(car);
+            //显示占位符
+//            String id = "null";
+//            String name = "null";
+//            String brand="null";
+//            String info="null";
+//            String price = "null";
+//            String date = "null";
+//            Car car = new Car(id,name,brand,date,info,price);
+//            mlist.add(car);
+            Toast.makeText(getContext(), "成功", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(getContext(), "qqqqqqqq", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "测试", Toast.LENGTH_LONG).show();
 
         }
 
-        Log.i("TAG", "initData:  11111111111111   " + mlist.size());
+        Log.i("initData方法", "nope" + mlist.size());
         cursor.close();
         db.close();
         adapter.notifyDataSetChanged();

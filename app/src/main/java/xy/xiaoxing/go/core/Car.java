@@ -1,5 +1,7 @@
 package xy.xiaoxing.go.core;
 
+import android.util.Log;
+
 public class Car {
     private String car_id;
     private String car_name;
@@ -15,6 +17,7 @@ public class Car {
         this.car_date = car_date;
         this.car_info = car_info;
         this.car_price = car_price;
+        Log.i("Car类",car_id+car_name+car_brand+car_date+car_info+car_price);
     }
 
     public String getCar_id() {

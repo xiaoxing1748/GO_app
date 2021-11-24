@@ -50,12 +50,12 @@ public class SecondFragment extends Fragment {
         SQLiteDatabase db =mySQLiteHelper.getReadableDatabase();
         @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from car",null);
         while(cursor.moveToNext()){
-            String id = cursor.getString(1);
+            String id = cursor.getString(0);
             String name = cursor.getString(1);
-            String brand = cursor.getString(1);
-            String date = cursor.getString(1);
-            String info = cursor.getString(1);
-            String price = cursor.getString(1);
+            String brand = cursor.getString(2);
+            String date = cursor.getString(3);
+            String info = cursor.getString(4);
+            String price = cursor.getString(5);
             Car car = new Car(id,name,brand,date,info,price);
             mlist.add(car);
         }
