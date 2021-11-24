@@ -3,15 +3,15 @@
 
     <item
         android:id="@android:id/background"
-        android:drawable="@drawable/star_border_hide" />
+        android:drawable="@drawable/star_border_hide"/>
 
     <item
         android:id="@android:id/secondaryProgress"
-        android:drawable="@drawable/star_border_hide" />
+        android:drawable="@drawable/star_border_hide"/>
 
     <item
         android:id="@android:id/progress"
-        android:drawable="@drawable/star_border_show" />
+        android:drawable="@drawable/star_border_show"/>
 
 </layer-list>
 

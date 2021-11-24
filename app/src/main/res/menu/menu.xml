@@ -9,8 +9,4 @@
         android:id="@+id/secondFragment"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"
         android:title="@string/menu_car_list" />
-    <item
-        android:id="@+id/thirdFragment"
-        android:icon="@drawable/ic_baseline_rate_review_24"
-        android:title="@string/menu_rate" />
 </menu>

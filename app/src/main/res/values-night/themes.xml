@@ -13,14 +13,4 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <style name="fiveRatingBar" parent="@android:style/Widget.RatingBar">
-
-        <item name="android:progressDrawable">@drawable/five_rating_bar</item>
-
-        <item name="android:minHeight">20dp</item>
-
-        <item name="android:maxHeight">100dp</item>
-
-    </style>
 </resources>

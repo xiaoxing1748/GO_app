@@ -4,26 +4,27 @@ import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import xy.xiaoxing.go.adapter.CarAdapter;
-import xy.xiaoxing.go.adapter.CarInfo;
+import xy.xiaoxing.go.core.Car;
 import xy.xiaoxing.go.R;
 import xy.xiaoxing.go.core.MySQLiteHelper;
 
 import java.util.ArrayList;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 public class SecondFragment extends Fragment {
 
 
     private RecyclerView tvSecond;
-    private ArrayList<CarInfo> mlist;
+    private ArrayList<Car> mlist;
     private CarAdapter adapter;
 
     @Override
@@ -49,11 +50,14 @@ public class SecondFragment extends Fragment {
         SQLiteDatabase db =mySQLiteHelper.getReadableDatabase();
         @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from car",null);
         while(cursor.moveToNext()){
-            @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex("cat_type"));
-            @SuppressLint("Range") int price = cursor.getInt(cursor.getColumnIndex("car_price"));
-            @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex("date"));
-            CarInfo carInfo = new CarInfo(name,price,date);
-            mlist.add(carInfo);
+            String id = cursor.getString(1);
+            String name = cursor.getString(1);
+            String brand = cursor.getString(1);
+            String date = cursor.getString(1);
+            String info = cursor.getString(1);
+            String price = cursor.getString(1);
+            Car car = new Car(id,name,brand,date,info,price);
+            mlist.add(car);
         }
         cursor.close();
         db.close();

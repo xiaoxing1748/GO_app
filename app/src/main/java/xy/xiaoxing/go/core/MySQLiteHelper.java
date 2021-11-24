@@ -10,10 +10,10 @@ import androidx.annotation.Nullable;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
-    static String dbname="database.db";
-    static int dbVersion=1;
+    private static final int DB_VERSION = 1;
+    private static final String DB_NAME = "database.db";
     public MySQLiteHelper(Context context) {
-        super(context, dbname, null, dbVersion);
+        super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
