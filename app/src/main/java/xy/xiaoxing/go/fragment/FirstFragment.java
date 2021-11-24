@@ -56,8 +56,8 @@ public class FirstFragment extends Fragment {
             public void onClick(View v) {
                 Log.i("FirstFragment.initView", "onClick: 点击了搜索汽车");
                 if (!TextUtils.isEmpty(editTextCarName.getText().toString().trim())) {
-                    String car_name = editTextCarName.getText().toString();
-                    initData(car_name);
+                    String keyword = editTextCarName.getText().toString();
+                    initData(keyword);
                 } else {
                     Toast.makeText(getContext(), "输入不能为空", Toast.LENGTH_LONG).show();
                 }
@@ -67,23 +67,27 @@ public class FirstFragment extends Fragment {
     }
 
 
-    private void initData(String car_name) {
+    private void initData(String keyword) {
         MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(getContext());
         SQLiteDatabase db = mySQLiteHelper.getReadableDatabase();
+        //模糊查询
         @SuppressLint("Recycle") Cursor cursor =
-                db.rawQuery("select * from car where car_name like '"+car_name+"';", null);
+                db.rawQuery("select * from car where car_name or car_brand or car_info like '%"+keyword+"%';", null);
 
         if (cursor != null) {
-            //显示占位符
-//            String id = "null";
-//            String name = "null";
-//            String brand="null";
-//            String info="null";
-//            String price = "null";
-//            String date = "null";
-//            Car car = new Car(id,name,brand,date,info,price);
-//            mlist.add(car);
-            Toast.makeText(getContext(), "成功", Toast.LENGTH_LONG).show();
+            //先清除mlist再添加
+            mlist.clear();
+            while(cursor.moveToNext()){
+                String id = cursor.getString(0);
+                String name = cursor.getString(1);
+                String brand = cursor.getString(2);
+                String date = cursor.getString(3);
+                String info = cursor.getString(4);
+                String price = cursor.getString(5);
+                Car car = new Car(id,name,brand,date,info,price);
+                mlist.add(car);
+            }
+            Toast.makeText(getContext(), "成功搜索到"+cursor.getCount()+"款车辆", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getContext(), "测试", Toast.LENGTH_LONG).show();
 

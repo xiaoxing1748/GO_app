@@ -40,7 +40,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Car car = data.get(position);
 //        holder.car_name.setText("汽车品牌：" + car.getCar_name());
-        holder.car_name.setText("名称：" + car.getCar_name());
+        holder.car_name.setText(car.getCar_name());
         holder.car_brand.setText("品牌：" + car.getCar_brand());
         holder.car_price.setText("售价：" + car.getCar_price());
         holder.car_date.setText("上市日期： " + car.getCar_date());
